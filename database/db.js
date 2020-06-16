@@ -5,6 +5,7 @@ const { Sequelize } = require('sequelize');
 sequelize = new Sequelize("byyhdcmrcoornaoxbmpo","ujyj8b7d4jqflrci","VJSLGIWMPAx479PV8wQX", {
     'host' : "byyhdcmrcoornaoxbmpo-mysql.services.clever-cloud.com",
     'dialect' : "mysql",
+    'dialectModule': "mysql2",
     'port' : "3306",
     'logging' : false
   })

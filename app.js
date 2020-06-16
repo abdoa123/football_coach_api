@@ -28,6 +28,10 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+app.get("/", (req, res) => {
+  res.send("Welcome to a basic express App");
+});
+
 app.use('/authenticate', registerRouter);
 app.use('/authenticate', loginRouter);
 app.use('/authenticate', logoutRouter);
