@@ -9,11 +9,10 @@ router.post('/', function (req, res, next) {
   var numberPattern = /\d+/g;
   var result = resultt.match(numberPattern)
   var score, wrong, correct;
-  //WHERE token =' + Token
-  myconnect.query('SELECT `token` from `user` ', function (err, rows, filds) {
+  myconnect.query('SELECT * from `user` WHERE token =' + Token, function (err, rows, filds) {
 
     if (!err) {
-/*
+
       if (rows.length > 0) {
         var data =update.compare(result, rows[0].score, rows[0].wrong, rows[0].correct, Token)
         console.log(data);
@@ -21,8 +20,7 @@ router.post('/', function (req, res, next) {
       } else {
         res.send({ data: "errsda" })
       }
-*/
-  res.send(rows);
+
     }
 
   })
