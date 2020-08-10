@@ -10,7 +10,7 @@ router.post('/', function (req, res, next) {
   var result = resultt.match(numberPattern)
   var score, wrong, correct;
   //WHERE token =' + Token
-  myconnect.query('SELECT token from `user` ', function (err, rows, filds) {
+  myconnect.query('SELECT `token` from `user` ', function (err, rows, filds) {
 
     if (!err) {
 /*
@@ -22,7 +22,7 @@ router.post('/', function (req, res, next) {
         res.send({ data: "errsda" })
       }
 */
-res.send(rows);
+  res.send(rows);
     }
 
   })
