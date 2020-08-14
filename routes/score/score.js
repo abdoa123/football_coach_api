@@ -18,7 +18,7 @@ router.post('/', function (req, res, next) {
         console.log(data);
         res.send({data: "one row affect" })
       } else {
-        res.send({ data: "errsda" })
+        res.send({ data: "no user with this tocken" })
       }
 
     }
