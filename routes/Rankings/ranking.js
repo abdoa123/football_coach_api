@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const bodyParser = require('body-parser');
 const Sequelize  = require('sequelize');
+var myconnect = require('../../database/db2')
 
 var userTable=require("../../database/userTable");
 
@@ -36,5 +37,13 @@ router.get('/scores',async function(req, res){
    }
 
 });
+router.get('/scoress',async function(req, res){
+myconnect.query('SELECT * from `user`', function (err, rows, filds) {
+    return res.send({  res: rows});
+});
+
+});
+
+
 
 module.exports= router;
