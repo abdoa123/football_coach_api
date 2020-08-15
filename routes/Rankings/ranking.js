@@ -38,7 +38,7 @@ router.get('/scores',async function(req, res){
 
 });
 router.get('/scoress',async function(req, res){
-myconnect.query('SELECT * from `user`', function (err, rows, filds) {
+myconnect.query('SELECT firstname , lastname,email,score,photo,correct, wrong from `user`', function (err, rows, filds) {
     return res.send({  res: rows});
 });
 
